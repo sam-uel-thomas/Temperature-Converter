@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const value = parseFloat(inputValue.value);
 
         if (value === '' || isNaN(value)) {
-            outputValue.textContent = '';
+            outputValue.textContent = '0.00';
             outputUnit.textContent = '';
             return;
         }
