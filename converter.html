@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="container">
+        <div class="top-text">
+            <h1 class="title">CONVERT</h1>
+            <h2 class="subtitle">convert between lengths by picking a value and selecting two units</h2>
+        </div>
+        <div class="inputs">
+            <div class="units">
+                <select id="from" name="from" placeholder="FROM" class="from-input">
+                    <option value="" disabled selected>FROM</option>
+                    <option value="CM">Centimetres</option>
+                    <option value="M">Metres</option>
+                    <option value="IN">Inches</option>
+                    <option value="FT">Feet</option>
+                </select>
+                <select id="to" name="to" placeholder="TO" class="to-input">
+                    <option value="" disabled selected>TO</option>
+                    <option value="CM">Centimetres</option>
+                    <option value="M">Metres</option>
+                    <option value="IN">Inches</option>
+                    <option value="FT">Feet</option>
+                </select>
+            </div>
+            <input type="number" id="value" name="value" placeholder="VALUE" class="value-input">
+        </div>
+        <div class="result">
+            <span id="output-value" class="output-value">AWAITING INPUT</span>
+            <span id="output-unit" class="output-unit"></span>
+        </div>
+    </div>
+</body>
+</html>
