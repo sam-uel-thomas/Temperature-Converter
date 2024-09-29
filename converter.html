@@ -28,7 +28,10 @@
                     <option value="FT">Feet</option>
                 </select>
             </div>
-            <input type="number" id="value" name="value" placeholder="VALUE" class="value-input">
+            <div class="value-input-container">
+                <input type="number" id="value" name="value" placeholder="VALUE" class="value-input no-spinners">
+                <span id="input-unit" class="input-unit"></span>
+            </div>
         </div>
         <div class="result">
             <span id="output-value" class="output-value">0.00</span>

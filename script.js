@@ -2,15 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const fromSelect = document.getElementById('from');
     const toSelect = document.getElementById('to');
     const inputValue = document.getElementById('value');
+    const inputUnit = document.getElementById('input-unit')
     const outputValue = document.getElementById('output-value');
     const outputUnit = document.getElementById('output-unit');
+
+    function updateInputUnit() {
+        const selectedUnit = fromSelect.value;
+        inputUnit.textContent = selectedUnit.toLowerCase();
+    }
 
     function convert() {
         const from = fromSelect.value;
         const to = toSelect.value;
         const value = parseFloat(inputValue.value);
 
-        if (value === '' || isNaN(value)) {
+        if (value === '' || from === '' || to === '' || isNaN(value)) {
             outputValue.textContent = '0.00';
             outputUnit.textContent = '';
             return;
@@ -61,7 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
         outputUnit.textContent = to;
     }
 
-    fromSelect.addEventListener('change', convert);
+    fromSelect.addEventListener('change', function() {
+        updateInputUnit();
+        convert();
+    });
+
     toSelect.addEventListener('change', convert);
     inputValue.addEventListener('input', convert);
+
+    // Initial update
+    updateInputUnit();
 });
